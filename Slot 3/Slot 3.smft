@@ -1,0 +1,223 @@
+<Device Model="CP4N">
+   <Network Type="Cresnet" Id="01">
+      <Device Model="GLS-ODT-C-CN" DeviceId="10"/>
+      <Device Model="GLS-ODT-C-CN" DeviceId="11"/>
+      <Device Model="GLS-ODT-C-CN" DeviceId="12"/>
+      <Device Model="GLS-ODT-C-CN" DeviceId="13"/>
+      <Device Model="GLS-ODT-C-CN" DeviceId="14"/>
+      <Device Model="GLS-ODT-C-CN" DeviceId="15"/>
+      <Device Model="GLS-ODT-C-CN" DeviceId="16"/>
+      <Device Model="ZUMLINK-KP" DeviceId="A1" Name="Womens"/>
+      <Device Model="ZUMLINK-KP" DeviceId="A2" Name="Mens"/>
+      <Device Model="ZUMLINK-KP" DeviceId="A3" Name="U1"/>
+      <Device Model="ZUMLINK-KP" DeviceId="A4" Name="U2"/>
+      <Device Model="ZUMLINK-KP" DeviceId="A5" Name="U3"/>
+      <Device Model="GLXP-DIMFLV8" DeviceId="F1"/>
+      <Device Model="GLXP-DIMFLV8" DeviceId="F2"/>
+      <Device Model="GLXP-DIMFLV8" DeviceId="F3"/>
+   </Network>
+   <Network Type="Ethernet" Id="02">
+      <Device Model="ZUMNET-JBOX-16A-LV,ZUMNET-JBOX-DALI" DeviceId="41" Name="1">
+         <Network Type="Cresnet" Id="01">
+            <Device Model="ZUMNET-JBOX-16A-LV" DeviceId="03"/>
+         </Network>
+      </Device>
+      <Device Model="ZUMNET-JBOX-16A-LV,ZUMNET-JBOX-DALI" DeviceId="42" Name="ZUMNET-BRIDGE-ROOM">
+         <Network Type="Cresnet" Id="01">
+            <Device Model="ZUMNET-JBOX-16A-LV" DeviceId="03"/>
+         </Network>
+      </Device>
+      <Device Model="ZUMNET-JBOX-16A-LV,ZUMNET-JBOX-DALI" DeviceId="43" Name="ZUMNET-BRIDGE-ROOM">
+         <Network Type="Cresnet" Id="01">
+            <Device Model="ZUMNET-JBOX-16A-LV" DeviceId="03"/>
+         </Network>
+      </Device>
+      <Device Model="ZUMNET-JBOX-16A-LV,ZUMNET-JBOX-DALI" DeviceId="44" Name="ZUMNET-BRIDGE-ROOM">
+         <Network Type="Cresnet" Id="01">
+            <Device Model="ZUMNET-JBOX-16A-LV" DeviceId="03"/>
+         </Network>
+      </Device>
+      <Device Model="ZUMNET-JBOX-16A-LV,ZUMNET-JBOX-DALI" DeviceId="45" Name="5">
+         <Network Type="Cresnet" Id="01">
+            <Device Model="ZUMNET-JBOX-16A-LV" DeviceId="03"/>
+         </Network>
+      </Device>
+      <Device Model="ZUMNET-JBOX-16A-LV,ZUMNET-JBOX-DALI" DeviceId="46" Name="ZUMNET-BRIDGE-ROOM">
+         <Network Type="Cresnet" Id="01">
+            <Device Model="ZUMNET-JBOX-16A-LV" DeviceId="03"/>
+         </Network>
+      </Device>
+      <Device Model="ZUMNET-JBOX-16A-LV,ZUMNET-JBOX-DALI" DeviceId="47" Name="ZUMNET-BRIDGE-ROOM">
+         <Network Type="Cresnet" Id="01">
+            <Device Model="ZUMNET-JBOX-16A-LV" DeviceId="03"/>
+         </Network>
+      </Device>
+      <Device Model="ZUMNET-JBOX-16A-LV,ZUMNET-JBOX-DALI" DeviceId="48" Name="ZUMNET-BRIDGE-ROOM">
+         <Network Type="Cresnet" Id="01">
+            <Device Model="ZUMNET-JBOX-16A-LV" DeviceId="03"/>
+         </Network>
+      </Device>
+      <Device Model="ZUMNET-JBOX-16A-LV,ZUMNET-JBOX-DALI" DeviceId="49" Name="ZUMNET-BRIDGE-ROOM">
+         <Network Type="Cresnet" Id="01">
+            <Device Model="ZUMNET-JBOX-16A-LV" DeviceId="03"/>
+         </Network>
+      </Device>
+      <Device Model="ZUMNET-JBOX-16A-LV,ZUMNET-JBOX-DALI" DeviceId="4A" Name="10">
+         <Network Type="Cresnet" Id="01">
+            <Device Model="ZUMNET-JBOX-16A-LV" DeviceId="03"/>
+         </Network>
+      </Device>
+      <Device Model="ZUMNET-JBOX-16A-LV,ZUMNET-JBOX-DALI" DeviceId="4B" Name="ZUMNET-BRIDGE-ROOM">
+         <Network Type="Cresnet" Id="01">
+            <Device Model="ZUMNET-JBOX-16A-LV" DeviceId="03"/>
+         </Network>
+      </Device>
+      <Device Model="ZUMNET-JBOX-16A-LV,ZUMNET-JBOX-DALI" DeviceId="4C" Name="ZUMNET-BRIDGE-ROOM">
+         <Network Type="Cresnet" Id="01">
+            <Device Model="ZUMNET-JBOX-16A-LV" DeviceId="03"/>
+         </Network>
+      </Device>
+      <Device Model="ZUMNET-JBOX-16A-LV,ZUMNET-JBOX-DALI" DeviceId="4D" Name="ZUMNET-BRIDGE-ROOM">
+         <Network Type="Cresnet" Id="01">
+            <Device Model="ZUMNET-JBOX-16A-LV" DeviceId="03"/>
+         </Network>
+      </Device>
+      <Device Model="ZUMNET-JBOX-16A-LV,ZUMNET-JBOX-DALI" DeviceId="4E" Name="ZUMNET-BRIDGE-ROOM">
+         <Network Type="Cresnet" Id="01">
+            <Device Model="ZUMNET-JBOX-16A-LV" DeviceId="03"/>
+         </Network>
+      </Device>
+      <Device Model="ZUMNET-JBOX-16A-LV,ZUMNET-JBOX-DALI" DeviceId="4F" Name="15">
+         <Network Type="Cresnet" Id="01">
+            <Device Model="ZUMNET-JBOX-16A-LV" DeviceId="03"/>
+         </Network>
+      </Device>
+      <Device Model="ZUMNET-JBOX-16A-LV,ZUMNET-JBOX-DALI" DeviceId="50" Name="ZUMNET-BRIDGE-ROOM">
+         <Network Type="Cresnet" Id="01">
+            <Device Model="ZUMNET-JBOX-16A-LV" DeviceId="03"/>
+         </Network>
+      </Device>
+      <Device Model="ZUMNET-JBOX-16A-LV,ZUMNET-JBOX-DALI" DeviceId="51" Name="ZUMNET-BRIDGE-ROOM">
+         <Network Type="Cresnet" Id="01">
+            <Device Model="ZUMNET-JBOX-16A-LV" DeviceId="03"/>
+         </Network>
+      </Device>
+      <Device Model="ZUMNET-JBOX-16A-LV,ZUMNET-JBOX-DALI" DeviceId="52" Name="ZUMNET-BRIDGE-ROOM">
+         <Network Type="Cresnet" Id="01">
+            <Device Model="ZUMNET-JBOX-16A-LV" DeviceId="03"/>
+         </Network>
+      </Device>
+      <Device Model="ZUMNET-JBOX-16A-LV,ZUMNET-JBOX-DALI" DeviceId="53" Name="ZUMNET-BRIDGE-ROOM">
+         <Network Type="Cresnet" Id="01">
+            <Device Model="ZUMNET-JBOX-16A-LV" DeviceId="03"/>
+         </Network>
+      </Device>
+      <Device Model="ZUMNET-JBOX-16A-LV,ZUMNET-JBOX-DALI" DeviceId="54" Name="20">
+         <Network Type="Cresnet" Id="01">
+            <Device Model="ZUMNET-JBOX-16A-LV" DeviceId="03"/>
+         </Network>
+      </Device>
+      <Device Model="ZUMNET-JBOX-16A-LV,ZUMNET-JBOX-DALI" DeviceId="55" Name="ZUMNET-BRIDGE-ROOM">
+         <Network Type="Cresnet" Id="01">
+            <Device Model="ZUMNET-JBOX-16A-LV" DeviceId="03"/>
+         </Network>
+      </Device>
+      <Device Model="ZUMNET-JBOX-16A-LV,ZUMNET-JBOX-DALI" DeviceId="56" Name="ZUMNET-BRIDGE-ROOM">
+         <Network Type="Cresnet" Id="01">
+            <Device Model="ZUMNET-JBOX-16A-LV" DeviceId="03"/>
+         </Network>
+      </Device>
+      <Device Model="ZUMNET-JBOX-16A-LV,ZUMNET-JBOX-DALI" DeviceId="57" Name="ZUMNET-BRIDGE-ROOM">
+         <Network Type="Cresnet" Id="01">
+            <Device Model="ZUMNET-JBOX-16A-LV" DeviceId="03"/>
+         </Network>
+      </Device>
+      <Device Model="ZUMNET-JBOX-16A-LV,ZUMNET-JBOX-DALI" DeviceId="58" Name="ZUMNET-BRIDGE-ROOM">
+         <Network Type="Cresnet" Id="01">
+            <Device Model="ZUMNET-JBOX-16A-LV" DeviceId="03"/>
+         </Network>
+      </Device>
+      <Device Model="ZUMNET-JBOX-16A-LV,ZUMNET-JBOX-DALI" DeviceId="59" Name="25">
+         <Network Type="Cresnet" Id="01">
+            <Device Model="ZUMNET-JBOX-16A-LV" DeviceId="03"/>
+         </Network>
+      </Device>
+      <Device Model="ZUMNET-JBOX-16A-LV,ZUMNET-JBOX-DALI" DeviceId="5A" Name="ZUMNET-BRIDGE-ROOM">
+         <Network Type="Cresnet" Id="01"/>
+      </Device>
+      <Device Model="ZUMNET-JBOX-16A-LV,ZUMNET-JBOX-DALI" DeviceId="5B" Name="ZUMNET-BRIDGE-ROOM">
+         <Network Type="Cresnet" Id="01"/>
+      </Device>
+      <Device Model="ZUMNET-JBOX-16A-LV,ZUMNET-JBOX-DALI" DeviceId="5C" Name="ZUMNET-BRIDGE-ROOM">
+         <Network Type="Cresnet" Id="01"/>
+      </Device>
+      <Device Model="ZUMNET-JBOX-16A-LV,ZUMNET-JBOX-DALI" DeviceId="5D" Name="ZUMNET-BRIDGE-ROOM">
+         <Network Type="Cresnet" Id="01"/>
+      </Device>
+      <Device Model="ZUMNET-JBOX-16A-LV,ZUMNET-JBOX-DALI" DeviceId="5E" Name="30">
+         <Network Type="Cresnet" Id="01"/>
+      </Device>
+      <Device Model="ZUMNET-JBOX-16A-LV,ZUMNET-JBOX-DALI" DeviceId="5F" Name="ZUMNET-BRIDGE-ROOM">
+         <Network Type="Cresnet" Id="01"/>
+      </Device>
+      <Device Model="ZUMNET-JBOX-16A-LV,ZUMNET-JBOX-DALI" DeviceId="60" Name="ZUMNET-BRIDGE-ROOM">
+         <Network Type="Cresnet" Id="01"/>
+      </Device>
+      <Device Model="ZUMNET-JBOX-16A-LV,ZUMNET-JBOX-DALI" DeviceId="61" Name="ZUMNET-BRIDGE-ROOM">
+         <Network Type="Cresnet" Id="01"/>
+      </Device>
+      <Device Model="ZUMNET-JBOX-16A-LV,ZUMNET-JBOX-DALI" DeviceId="62" Name="ZUMNET-BRIDGE-ROOM">
+         <Network Type="Cresnet" Id="01"/>
+      </Device>
+      <Device Model="ZUMNET-JBOX-16A-LV,ZUMNET-JBOX-DALI" DeviceId="63" Name="35">
+         <Network Type="Cresnet" Id="01"/>
+      </Device>
+      <Device Model="ZUMNET-JBOX-16A-LV,ZUMNET-JBOX-DALI" DeviceId="64" Name="ZUMNET-BRIDGE-ROOM">
+         <Network Type="Cresnet" Id="01"/>
+      </Device>
+      <Device Model="ZUMNET-JBOX-16A-LV,ZUMNET-JBOX-DALI" DeviceId="65" Name="ZUMNET-BRIDGE-ROOM">
+         <Network Type="Cresnet" Id="01"/>
+      </Device>
+      <Device Model="ZUMNET-JBOX-16A-LV,ZUMNET-JBOX-DALI" DeviceId="66" Name="ZUMNET-BRIDGE-ROOM">
+         <Network Type="Cresnet" Id="01"/>
+      </Device>
+      <Device Model="ZUMNET-JBOX-16A-LV,ZUMNET-JBOX-DALI" DeviceId="67" Name="ZUMNET-BRIDGE-ROOM">
+         <Network Type="Cresnet" Id="01"/>
+      </Device>
+      <Device Model="ZUMNET-JBOX-16A-LV,ZUMNET-JBOX-DALI" DeviceId="68" Name="40">
+         <Network Type="Cresnet" Id="01"/>
+      </Device>
+      <Device Model="ZUMNET-JBOX-16A-LV,ZUMNET-JBOX-DALI" DeviceId="69" Name="ZUMNET-BRIDGE-ROOM">
+         <Network Type="Cresnet" Id="01"/>
+      </Device>
+      <Device Model="ZUMNET-JBOX-16A-LV,ZUMNET-JBOX-DALI" DeviceId="6A" Name="ZUMNET-BRIDGE-ROOM">
+         <Network Type="Cresnet" Id="01"/>
+      </Device>
+      <Device Model="ZUMNET-JBOX-16A-LV,ZUMNET-JBOX-DALI" DeviceId="6B" Name="ZUMNET-BRIDGE-ROOM">
+         <Network Type="Cresnet" Id="01"/>
+      </Device>
+      <Device Model="ZUMNET-JBOX-16A-LV,ZUMNET-JBOX-DALI" DeviceId="6C" Name="ZUMNET-BRIDGE-ROOM">
+         <Network Type="Cresnet" Id="01"/>
+      </Device>
+      <Device Model="ZUMNET-JBOX-16A-LV,ZUMNET-JBOX-DALI" DeviceId="6D" Name="45">
+         <Network Type="Cresnet" Id="01"/>
+      </Device>
+      <Device Model="ZUMNET-JBOX-16A-LV,ZUMNET-JBOX-DALI" DeviceId="6E" Name="ZUMNET-BRIDGE-ROOM">
+         <Network Type="Cresnet" Id="01"/>
+      </Device>
+      <Device Model="ZUMNET-JBOX-16A-LV,ZUMNET-JBOX-DALI" DeviceId="6F" Name="ZUMNET-BRIDGE-ROOM">
+         <Network Type="Cresnet" Id="01">
+            <Device Model="ZUMNET-JBOX-16A-LV" DeviceId="03"/>
+         </Network>
+      </Device>
+      <Device Model="ZUMNET-JBOX-16A-LV,ZUMNET-JBOX-DALI" DeviceId="70" Name="ZUMNET-BRIDGE-ROOM">
+         <Network Type="Cresnet" Id="01"/>
+      </Device>
+      <Device Model="ZUMNET-JBOX-16A-LV,ZUMNET-JBOX-DALI" DeviceId="71" Name="ZUMNET-BRIDGE-ROOM">
+         <Network Type="Cresnet" Id="01"/>
+      </Device>
+      <Device Model="ZUMNET-JBOX-16A-LV,ZUMNET-JBOX-DALI" DeviceId="72" Name="50">
+         <Network Type="Cresnet" Id="01"/>
+      </Device>
+   </Network>
+</Device>

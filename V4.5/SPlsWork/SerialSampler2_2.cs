@@ -58,8 +58,6 @@ namespace UserModule_SERIALSAMPLER2_2
     
     public override void LogosSplusInitialize()
     {
-        SocketInfo __socketinfo__ = new SocketInfo( 1, this );
-        InitialParametersClass.ResolveHostName = __socketinfo__.ResolveHostName;
         _SplusNVRAM = new SplusNVRAM( this );
         
         TRIGGER = new Crestron.Logos.SplusObjects.DigitalInput( TRIGGER__DigitalInput__, this );
