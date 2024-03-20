@@ -1,0 +1,720 @@
+
+#SYMBOL_NAME "Scheduler_CH5_daymodifier_V3"
+#DEFAULT_VOLATILE
+#ENABLE_STACK_CHECKING
+#ENABLE_TRACE
+#help_begin
+Sch V2
+#help_end
+
+/**** I/O Variables ****/
+SIGNED_INTEGER FileHandle;
+Digital_input Start,Save,mo[10],tu[10],we[10],th[10],fr[10],sa[10],su[10];
+Digital_output mofb[10],tufb[10],wefb[10],thfb[10],frfb[10],safb[10],sufb[10];
+STRING_INPUT eventChange[10][1024];
+String_output Serial,Events[20];   
+integer a,b,i,j, c,d,k,inchar,Analog[300];
+SIGNED_INTEGER result;
+String TEMP[4029],TEMP2[4029],temp3[4029],fname[1024],sBuf[1024],daysTemp[1024][30],days[1024][30],nil[123];
+/**** Functions ****/
+        
+FUNCTION saveToDisk()
+{
+
+sBuf = "#2\n";
+for(i=1 to 8)
+{
+sBuf = sBuf + eventChange[i]+"\n";
+}
+makestring(fname,"\\NVRAM\\scheduler1.txt");
+
+StartFileOperations();
+filedelete(fname);
+FileHandle=FileOpen(fname,_O_CREAT | _O_RDWR | _O_TEXT | _O_APPEND);
+IF (FileHandle >= 0)
+FileWrite(FileHandle,sBuf,8192);
+FileClose(FileHandle);
+EndFileOperations();
+ 
+
+}
+
+
+FUNCTION retrive()
+{
+           
+
+StartFileOperations();
+makestring(fname,"\\NVRAM\\scheduler1.txt");
+FileHandle=FileOpen(fname, _O_RDONLY | _O_TEXT);     
+IF (FileHandle >= 0)
+{
+FileRead(FileHandle,sBuf,4096);
+fileseek(FileHandle,0,seek_set);
+FileClose(FileHandle);
+EndFileOperations();
+}
+
+
+b=1;
+for(i=1 to 20)
+{
+a=Find("\n",sBuf,b);
+if (a!= 0)
+{
+temp=MID(sBuf,b,a-b);
+Events[i]=temp;
+
+
+if(i>1)
+{
+///////////////
+
+d=1;
+for(j=1 to 20)
+{
+c=Find(",",temp,d);
+if (c!= 0)
+{
+temp2=MID(temp,d,c-d);
+days[j]=temp2;
+d=c+1;
+}
+}
+
+/////////////////////////////
+
+
+inchar = GETC(days[5]);
+if(inchar = 'X')
+sufb[i-1]=1;
+else
+sufb[i-1]=0;
+
+inchar = GETC(days[5]);
+if(inchar = 'X')
+mofb[i-1]=1;
+else
+mofb[i-1]=0;
+
+inchar = GETC(days[5]);
+if(inchar = 'X')
+tufb[i-1]=1;
+else
+tufb[i-1]=0;
+
+inchar = GETC(days[5]);
+if(inchar = 'X')
+wefb[i-1]=1;
+else
+wefb[i-1]=0;
+
+inchar = GETC(days[5]);
+if(inchar = 'X')
+thfb[i-1]=1;
+else
+thfb[i-1]=0;
+
+inchar = GETC(days[5]);
+if(inchar = 'X')
+frfb[i-1]=1;
+else
+frfb[i-1]=0;
+
+inchar = GETC(days[5]);
+if(inchar = 'X')
+safb[i-1]=1;
+else
+safb[i-1]=0;
+
+
+
+/////////////
+}
+
+
+
+
+
+b=a+2;
+}
+}
+
+
+
+
+
+
+
+
+
+}
+
+PUSH Save
+{
+
+saveToDisk();
+retrive();
+}
+                                      
+
+PUSH start
+{
+retrive();
+}
+                           
+        
+
+
+/////////SUNDAY
+
+            
+PUSH su
+{
+a=GetLastModifiedArrayIndex();
+temp = eventChange[a];
+
+
+///////////////
+
+d=1;
+for(j=1 to 20)
+{
+c=Find(",",temp,d);
+if (c!= 0)
+{
+temp2=MID(temp,d,c-d);
+days[j]=temp2;
+d=c+1;
+}
+}
+
+/////////////////////////////
+daysTemp[5] = days[5];
+
+inchar = GETC(daysTemp[5]);
+if(inchar = 'X')
+{
+temp2="-";
+sufb[a]=0;
+
+}
+else
+{
+temp2="X";
+sufb[a]=1;
+}
+
+days[5]=temp2+daysTemp[5];
+/////////////
+
+
+
+eventChange[a]=days[1]+","+days[2]+","+days[3]+","+days[4]+","+days[5]+","+days[6]+","+days[7]+","+days[8];
+   
+
+saveToDisk();
+retrive();
+       
+}
+                                                                             
+
+      ///////////MONDAY//////////////
+        
+PUSH mo
+{
+a=GetLastModifiedArrayIndex();
+temp = eventChange[a];
+
+
+///////////////
+
+d=1;
+for(j=1 to 20)
+{
+c=Find(",",temp,d);
+if (c!= 0)
+{
+temp2=MID(temp,d,c-d);
+days[j]=temp2;
+d=c+1;
+}
+}
+
+/////////////////////////////
+daysTemp[5] = days[5];
+
+inchar = GETC(daysTemp[5]);
+if(inchar = 'X')
+{
+temp2="X";
+}
+else
+{
+temp2="-";
+}
+inchar = GETC(daysTemp[5]);
+if(inchar = 'X')
+{
+mofb[a]=0;
+temp2= temp2+"-";
+}
+else
+{
+mofb[a]=1;
+temp2= temp2+"X";
+}
+
+days[5]=temp2+daysTemp[5];
+/////////////
+
+
+
+eventChange[a]=days[1]+","+days[2]+","+days[3]+","+days[4]+","+days[5]+","+days[6]+","+days[7]+","+days[8];
+   
+
+saveToDisk();
+retrive();
+       
+}
+
+
+
+
+
+
+///////////TUESDAY//////////////
+
+
+PUSH tu
+{
+a=GetLastModifiedArrayIndex();
+temp = eventChange[a];
+
+
+///////////////
+
+d=1;
+for(j=1 to 20)
+{
+c=Find(",",temp,d);
+if (c!= 0)
+{
+temp2=MID(temp,d,c-d);
+days[j]=temp2;
+d=c+1;
+}
+}
+
+/////////////////////////////
+daysTemp[5] = days[5];
+
+inchar = GETC(daysTemp[5]);
+if(inchar = 'X')
+{
+temp2="X";
+}
+else
+{
+temp2="-";
+}
+inchar = GETC(daysTemp[5]);
+if(inchar = 'X')
+{
+temp2=temp2+"X";
+}
+else
+{
+temp2=temp2+"-";
+}
+inchar = GETC(daysTemp[5]);
+if(inchar = 'X')
+{
+tufb[a]=0;
+temp2= temp2+"-";
+}
+else
+{
+tufb[a]=1;
+temp2= temp2+"X";
+}
+
+days[5]=temp2+daysTemp[5];
+/////////////
+
+
+
+eventChange[a]=days[1]+","+days[2]+","+days[3]+","+days[4]+","+days[5]+","+days[6]+","+days[7]+","+days[8];
+   
+
+saveToDisk();
+retrive();
+       
+}
+
+
+
+                            
+///////////WEDNESDAY//////////////
+
+
+
+
+
+
+PUSH we
+{
+a=GetLastModifiedArrayIndex();
+temp = eventChange[a];
+
+
+///////////////
+
+d=1;
+for(j=1 to 20)
+{
+c=Find(",",temp,d);
+if (c!= 0)
+{
+temp2=MID(temp,d,c-d);
+days[j]=temp2;
+d=c+1;
+}
+}
+
+/////////////////////////////
+daysTemp[5] = days[5];
+
+inchar = GETC(daysTemp[5]);
+if(inchar = 'X')
+{
+temp2="X";
+}
+else
+{
+temp2="-";
+}
+inchar = GETC(daysTemp[5]);
+if(inchar = 'X')
+{
+temp2=temp2+"X";
+}
+else
+{
+temp2=temp2+"-";
+}
+inchar = GETC(daysTemp[5]);
+if(inchar = 'X')
+{
+temp2=temp2+"X";
+}
+else
+{
+temp2=temp2+"-";
+}
+inchar = GETC(daysTemp[5]);
+if(inchar = 'X')
+{
+wefb[a]=0;
+temp2= temp2+"-";
+}
+else
+{
+wefb[a]=1;
+temp2= temp2+"X";
+}
+
+days[5]=temp2+daysTemp[5];
+/////////////
+
+
+
+eventChange[a]=days[1]+","+days[2]+","+days[3]+","+days[4]+","+days[5]+","+days[6]+","+days[7]+","+days[8];
+   
+
+saveToDisk();
+retrive();
+       
+}
+
+PUSH th
+{
+a=GetLastModifiedArrayIndex();
+temp = eventChange[a];
+
+
+///////////////
+
+d=1;
+for(j=1 to 20)
+{
+c=Find(",",temp,d);
+if (c!= 0)
+{
+temp2=MID(temp,d,c-d);
+days[j]=temp2;
+d=c+1;
+}
+}
+
+/////////////////////////////
+daysTemp[5] = days[5];
+
+inchar = GETC(daysTemp[5]);
+if(inchar = 'X')
+{
+temp2="X";
+}
+else
+{
+temp2="-";
+}
+inchar = GETC(daysTemp[5]);
+if(inchar = 'X')
+{
+temp2=temp2+"X";
+}
+else
+{
+temp2=temp2+"-";
+}
+inchar = GETC(daysTemp[5]);
+if(inchar = 'X')
+{
+temp2=temp2+"X";
+}
+else
+{
+temp2=temp2+"-";
+}
+inchar = GETC(daysTemp[5]);
+if(inchar = 'X')
+{
+temp2=temp2+"X";
+}
+else
+{
+temp2=temp2+"-";
+}
+inchar = GETC(daysTemp[5]);
+if(inchar = 'X')
+{
+thfb[a]=0;
+temp2= temp2+"-";
+}
+else
+{
+thfb[a]=1;
+temp2= temp2+"X";
+}
+
+days[5]=temp2+daysTemp[5];
+/////////////
+
+
+
+eventChange[a]=days[1]+","+days[2]+","+days[3]+","+days[4]+","+days[5]+","+days[6]+","+days[7]+","+days[8];
+   
+
+saveToDisk();
+retrive();
+       
+}
+
+PUSH fr
+{
+a=GetLastModifiedArrayIndex();
+temp = eventChange[a];
+
+
+///////////////
+
+d=1;
+for(j=1 to 20)
+{
+c=Find(",",temp,d);
+if (c!= 0)
+{
+temp2=MID(temp,d,c-d);
+days[j]=temp2;
+d=c+1;
+}
+}
+
+/////////////////////////////
+daysTemp[5] = days[5];
+
+inchar = GETC(daysTemp[5]);
+if(inchar = 'X')
+{
+temp2="X";
+}
+else
+{
+temp2="-";
+}
+inchar = GETC(daysTemp[5]);
+if(inchar = 'X')
+{
+temp2=temp2+"X";
+}
+else
+{
+temp2=temp2+"-";
+}
+inchar = GETC(daysTemp[5]);
+if(inchar = 'X')
+{
+temp2=temp2+"X";
+}
+else
+{
+temp2=temp2+"-";
+}
+inchar = GETC(daysTemp[5]);
+if(inchar = 'X')
+{
+temp2=temp2+"X";
+}
+else
+{
+temp2=temp2+"-";
+}
+inchar = GETC(daysTemp[5]);
+if(inchar = 'X')
+{
+temp2=temp2+"X";
+}
+else
+{
+temp2=temp2+"-";
+}
+
+inchar = GETC(daysTemp[5]);
+if(inchar = 'X')
+{
+frfb[a]=0;
+temp2= temp2+"-";
+}
+else
+{
+frfb[a]=1;
+temp2= temp2+"X";
+}
+
+days[5]=temp2+daysTemp[5];
+/////////////
+
+
+
+eventChange[a]=days[1]+","+days[2]+","+days[3]+","+days[4]+","+days[5]+","+days[6]+","+days[7]+","+days[8];
+   
+
+saveToDisk();
+retrive();
+       
+}
+
+PUSH sa
+{
+a=GetLastModifiedArrayIndex();
+temp = eventChange[a];
+
+
+///////////////
+
+d=1;
+for(j=1 to 20)
+{
+c=Find(",",temp,d);
+if (c!= 0)
+{
+temp2=MID(temp,d,c-d);
+days[j]=temp2;
+d=c+1;
+}
+}
+
+/////////////////////////////
+daysTemp[5] = days[5];
+
+inchar = GETC(daysTemp[5]);
+if(inchar = 'X')
+{
+temp2="X";
+}
+else
+{
+temp2="-";
+}
+inchar = GETC(daysTemp[5]);
+if(inchar = 'X')
+{
+temp2=temp2+"X";
+}
+else
+{
+temp2=temp2+"-";
+}
+inchar = GETC(daysTemp[5]);
+if(inchar = 'X')
+{
+temp2=temp2+"X";
+}
+else
+{
+temp2=temp2+"-";
+}
+inchar = GETC(daysTemp[5]);
+if(inchar = 'X')
+{
+temp2=temp2+"X";
+}
+else
+{
+temp2=temp2+"-";
+}
+inchar = GETC(daysTemp[5]);
+if(inchar = 'X')
+{
+temp2=temp2+"X";
+}
+else
+{
+temp2=temp2+"-";
+}
+inchar = GETC(daysTemp[5]);
+if(inchar = 'X')
+{
+temp2=temp2+"X";
+}
+else
+{
+temp2=temp2+"-";
+}
+
+inchar = GETC(daysTemp[5]);
+if(inchar = 'X')
+{
+safb[a]=0;
+temp2= temp2+"-";
+}
+else
+{
+safb[a]=1;
+temp2= temp2+"X";
+}
+
+days[5]=temp2+daysTemp[5];
+/////////////
+
+
+
+eventChange[a]=days[1]+","+days[2]+","+days[3]+","+days[4]+","+days[5]+","+days[6]+","+days[7]+","+days[8];
+   
+
+saveToDisk();
+retrive();
+       
+}
+

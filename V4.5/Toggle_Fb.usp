@@ -1,0 +1,38 @@
+
+#SYMBOL_NAME "Toggle_Fb"
+#DEFAULT_VOLATILE
+#ENABLE_STACK_CHECKING
+#ENABLE_TRACE
+#help_begin
+Toggle with fb
+#help_end
+
+/**** I/O Variables ****/
+Digital_input fb,fb2,clock,setD,resetD;
+Digital_output Toggled;
+
+/**** Functions ****/
+
+Push clock
+{
+Toggled =! fb;
+}
+
+Push setD
+
+{
+Toggled = 1; 
+}
+
+Push resetD
+
+{
+  Toggled = 0;
+}
+                                          
+change fb2
+{
+
+Toggled = fb2;
+               
+}

@@ -1,0 +1,18 @@
+<Device Model="DIN-AP4">
+   <Network Type="Cresnet" Id="01"/>
+   <Network Type="Ethernet" Id="02">
+      <Device Model="XPanel 3.0 Crestron HTML5" DeviceId="03"/>
+      <Device Model="Crestron One" DeviceId="11"/>
+      <Device Model="TSW-760" DeviceId="20" Name="Master TP"/>
+      <Device Model="Core3 UI XPanel" DeviceId="31" Name="DONE"/>
+      <Device Model="Core3 UI XPanel" DeviceId="32" Name="DONE"/>
+      <Device Model="Core3 UI XPanel" DeviceId="33" Name="DONE"/>
+      <Device Model="Core3 UI XPanel" DeviceId="34" Name="DONE"/>
+      <Device Model="Core3 UI XPanel" DeviceId="35" Name="DONE"/>
+      <Device Model="Core3 UI XPanel" DeviceId="36" Name="DONE"/>
+      <Device Model="Core3 UI XPanel" DeviceId="37" Name="DONE"/>
+      <Device Model="Core3 UI XPanel" DeviceId="38" Name="DONE"/>
+      <Device Model="Core3 UI XPanel" DeviceId="39" Name="DONE"/>
+      <Device Model="Core3 UI XPanel" DeviceId="3A" Name="NOT UPDATED FOR 250 ZONES"/>
+   </Network>
+</Device>
