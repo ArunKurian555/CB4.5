@@ -1,4 +1,4 @@
-Crosspoint listing for C:\Users\arune\OneDrive - SLSLTG\FS\Crestron\Arun_Crestron\2023\Disney\Program\Rev_2\BASE\CB4.5\V4.5\CB4.SMW
+Crosspoint listing for C:\Users\L2\Desktop\CB4.5\V4.5\CB4.SMW
 
 Note:  Crosspoint symbols with EquipID or ControlID set to 0d are not routeable.
 
