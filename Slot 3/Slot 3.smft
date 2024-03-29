@@ -1,4 +1,4 @@
-<Device Model="CP4N">
+<Device Model="DIN-AP4">
    <Network Type="Cresnet" Id="01">
       <Device Model="GLS-ODT-C-CN" DeviceId="10"/>
       <Device Model="GLS-ODT-C-CN" DeviceId="11"/>
